@@ -1,22 +1,24 @@
+import math as m
 def fun1(n):
-    t=0
-    for i in range(2,n):
-        if(n%i==0):
-            t=1
-            return False
-    if t==0:
+    if n==1 or n==0:
         return True
+    for i in range(2,int(m.sqrt(n))+1):
+        if n%i==0:
+            return False
+    return True
 def fun(n):
-    x=n
-    y=n
-    while x!=0:
-        if fun1(x):
-            return x
-        x-=1
-        if fun1(y):
-            return y
-        y+=1
-
-for i in range(int(input())):
-    n=int(input())
-    print(fun(n))
+    a=n
+    b=n
+    while 1:
+        if fun1(a):
+            print(a)
+            break
+        a-=1
+        if fun1(b):
+            print(b)
+            break
+        b+=1
+n=int(input())
+for i in range(n):
+    x=int(input())
+    fun(x)
