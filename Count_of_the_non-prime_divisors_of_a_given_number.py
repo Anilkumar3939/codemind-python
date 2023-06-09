@@ -1,21 +1,15 @@
+import math
+def fun(n):
+    if n==1 or n==0:
+        return False
+    for i in range(2,int(math.sqrt(n))+1):
+        if n%i==0:
+            return False
+    return True
 n=int(input())
-i=2
-count1=0
-while i<=n:
-    if(n%i==0):
-        j=2
-        count=0
-        while j<i:
-            if(i%j==0):
-                count=1
-                break
-            else:
-                j=j+1
-        if(count==1):
-            count1=count1+1
-    i=i+1
-print(count1+1)
-            
-        
-            
-
+s=0
+for i in range(1,n+1):
+    if n%i==0:
+        if fun(i)==False:
+            s+=1
+print(s)
