@@ -1,11 +1,9 @@
-n=int(input())
-sum=0
-cond=True
-while cond:
-    while n>0:
-        sum=sum+n%10
-        n=n//10
-    n=sum
-    sum=0
-    cond=n>10
+n=str(input())
+while len(n)!=1:
+    l=[]
+    for i in n:
+        l.append(int(i))
+    n=sum(l)
+    n=str(n)
 print(n)
+    
